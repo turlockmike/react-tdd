@@ -1,11 +1,10 @@
 {
-  "name": "enzyme-v3-and-react-16",
+  "name": "React Example",
   "version": "0.0.1",
-  "description": "Example of Jest, Enzyme v3 and React 16",
   "scripts": {
     "test": "jest"
   },
-  "author": "Eduardo Rabelo (https://github.com/oieduardorabelo)",
+  "author": "Michael Darmousseh",
   "license": "MIT",
   "dependencies": {
     "babel-core": "6.26.0",
