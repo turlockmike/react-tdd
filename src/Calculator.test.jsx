@@ -2,46 +2,16 @@ import React from "react"
 import { shallow } from "enzyme"
 import Calculator from "./Calculator"
 
+/**
+ * Acceptance Criteria
+ *   1. It displays a total, input text field, and 'add' button.
+ *   2. The total should default to a value of 0
+ *   3. It allows a user to input a number into a field
+ *   4. When a user clicks 'add' it adds the number to the running total
+ *   5. When a user clicks 'add' the previous input should be cleared
+ *   6. It only allows numeric characters (TODO)
+ */
 
-describe('App', () => {
-  it('renders an output element', () => {
-    expect(shallow(<Calculator />).find('output').exists()).toEqual(true);
-  })
-  it('renders an input element', () => {
-    expect(shallow(<Calculator />).find('input').exists()).toEqual(true);
-  })
-  it('renders an button element', () => {
-    expect(shallow(<Calculator />).find('button').exists()).toEqual(true);
-  })
-  it('renders a default output value of 0', () => {
-    expect(shallow(<Calculator />).find('output').text()).toEqual('0')
-  })
-  it('allows a user to set an input a value', () => {
-    const wrapper = shallow(<Calculator />)
+describe('Calculator', () => {
 
-    wrapper.find('input').simulate('change', {target: {value: '123'}})
-
-    expect(wrapper.find('input').prop('value')).toEqual('123')
-  })
-  it('adds the input value to the total submit is clicked', () => {
-    const wrapper = shallow(<Calculator />)
-
-    wrapper.find('input').simulate('change', {target: {value: '123'}})
-    wrapper.find('button').simulate('click')
-
-    expect(wrapper.find('output').text()).toEqual('123')
-
-    wrapper.find('input').simulate('change', {target: {value: '200'}})
-    wrapper.find('button').simulate('click')
-
-    expect(wrapper.find('output').text()).toEqual('323')
-  })
-  it('clears the input after each submission', () => {
-    const wrapper = shallow(<Calculator />)
-
-    wrapper.find('input').simulate('change', {target: {value: '123'}})
-    wrapper.find('button').simulate('click')
-
-    expect(wrapper.find('input').prop('value')).toEqual('')
-  })
 })
